@@ -1,4 +1,6 @@
 #include "stm32f10x.h"
+#include <stdio.h>
+#include <string.h>
 #include <cmsis_os.h>
 // #define __task          // __declspec(noreturn)
 // #define __used          // __attribute__((used))os_tsk_pass()osThreadTerminate os_clock_demon osDelay osThreadYield
@@ -218,18 +220,31 @@ struct	uMenu
 void Recording( void )
  {
 	
-	static	struct uMenu * menu;
+// 	static	struct uMenu * menu;
 //	{ { 0x00, TableSZ[0] }, }
-CHAR  * TableSZ[]= { "1.歌曲名" } ;
-menu [0].yx = 0x00;
-menu [0].sz = TableSZ[0];    
+// 	CHAR  * TableSZ;
+// 	u8 i;
+// 	struct uMusic	Music;
+	
 
 // 	do
 // 	{
+// 		menu [0].yx = 0x0106;
+// 		menu [0].sz = "乐曲选择";	
+// 		for( i = 1; i < 7; i ++ )
+// 		{
+// 			File_Load( i - 1, &Music,sizeof( struct uMusic ) );
+// 			sprintf( TableSZ,"%d.%s",i, Music.Save_Time );
+// 			menu [i].yx = 0x00;
+// 			menu [i].sz = TableSZ;
+// 			memset( TableSZ, 0x00, 20 );//	xxxx-xx-xx xx:xx  16字节 24c08	1024 * 8 --- 8192字节
+// 		}
 // 		cls();
 // 		Menu_Redraw( menu );
+
 // 		item = Menu_Select_Ex( menu, item, show_std_clock );
-// 		
+// 		File_Load( i, &Music,sizeof( struct uMusic ) );
+
 // 		switch( item )
 // 		{
 // 			case 1: Music_Stave();	break;
